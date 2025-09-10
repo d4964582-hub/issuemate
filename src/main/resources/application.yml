@@ -1,0 +1,21 @@
+spring.application.name: issuemate
+spring:
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      project-id: ${OPENAI_PROJECT_ID}
+      chat:
+        options:
+          model: gpt-5-nano
+          temperature: 1
+server:
+  port: 8080
+
+issuemate:
+  jira:
+    base-url: https://${ISSUEMATE_CORE_HOST}/api/rest/spine-ui-support/jira-gateway/
+    pat: ${ISSUEMATE_JIRA_PAT}
+    project-key: HRIMP
+    default-assignee-self: true
+    connect-timeout-ms: 5000
+    read-timeout-ms: 15000
